@@ -10,7 +10,7 @@
 <body>
 
 main.jsp
-나는 빡빡이다
+나는 빡빡이다,,
 
 </body>
 </html>
