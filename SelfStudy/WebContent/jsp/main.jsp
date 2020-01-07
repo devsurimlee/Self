@@ -9,8 +9,6 @@
 </head>
 <body>
 
-main.jsp
-나는 빡빡이다,,mm
-
+알고리즘 
 </body>
 </html>
