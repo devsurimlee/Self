@@ -17,7 +17,7 @@ public class Lv1 {
 		System.out.println(A * b3);
 		System.out.println(A * b2 );
 		System.out.println(A * b1);
-		System.out.println(A * Integer.parseInt(B));
+		System.out.println(A * Integer.parseInt(B));  
 
 	}
 }
