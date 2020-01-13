@@ -51,6 +51,28 @@ public class Lv2 {
 		}
 		
 		/* 2884: 알람 시계 */
+		int h = sc.nextInt();
+		int m = sc.nextInt();
+		
+		if (m >= 45) {
+			m -= 45;
+			
+		} else {
+			
+			if (h == 0 ) {
+				h = h + 24 -1;
+				m = m + 60 - 45;
+			} else {
+				h -= 1; 
+				m = m + 60 - 45;
+			}
+		}
+		
+		System.out.println(h +" "+ m);
+		
+		/* 10817 : 세 수 */
+		
+		
 		
 	}
 }
