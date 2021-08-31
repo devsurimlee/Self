@@ -3,20 +3,20 @@ package main.leetCode.easy;
 import java.util.ArrayList;
 
 public class _0013RomanToInteger {
-
     public static int romanToInt(String s) {
 
         int add = 0;
         for (int i = 0; i < s.length(); i++) {
 
-            switch(String.valueOf(s.charAt(i))) {
-                case "I" : add += 1; break;
-                case "V" : add += 5; break;
-                case "X" : add += 10; break;
-                case "L" : add += 50; break;
-                case "C" : add += 100; break;
-                case "D" : add += 500; break;
-                case "M" : add += 1000; break;
+            // String.valueOf(s.charAt(i)) -> s.charAt(i), String으로 변환 안하고 확인가능
+            switch(s.charAt(i)) {
+                case 'I' : add += 1; break;
+                case 'V' : add += 5; break;
+                case 'X' : add += 10; break;
+                case 'L' : add += 50; break;
+                case 'C' : add += 100; break;
+                case 'D' : add += 500; break;
+                case 'M' : add += 1000; break;
             }
         }
 
