@@ -27,6 +27,14 @@ public class _0409LongestPalindrome {
         }
 
         return sum + odd;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(longestPalindrome("abccccdd"));
+
+    }
+}
+
 
 //////////////////////////////////////////////////////////////
 //
@@ -61,10 +69,3 @@ public class _0409LongestPalindrome {
 //        }
 //
 //        return sum + add;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(longestPalindrome("abccccdd"));
-
-    }
-}
