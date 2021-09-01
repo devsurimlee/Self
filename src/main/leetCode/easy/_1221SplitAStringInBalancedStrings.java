@@ -1,5 +1,6 @@
 package main.leetCode.easy;
 
+// 21.08.31 - solved
 public class _1221SplitAStringInBalancedStrings {
     public static int balancedStringSplit(String s) {
 
@@ -7,8 +8,8 @@ public class _1221SplitAStringInBalancedStrings {
         int count = 0;
 
         // 문자열 읽으면서 R이면 +1, L이면 -1, R과 L의 개수가 같으면 +-하여 0임.
-        for(int i = 0; i < s.length(); i++) {
-            if(s.charAt(i) == 'R') {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'R') {
                 count++;
             } else {
                 count--;
@@ -27,7 +28,6 @@ public class _1221SplitAStringInBalancedStrings {
 
 
 /*
-21.08.31 - solved
 
 https://leetcode.com/problems/split-a-string-in-balanced-strings/
 
