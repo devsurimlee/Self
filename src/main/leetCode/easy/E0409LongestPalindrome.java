@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 // 21.09.01 - solved
-public class _0409LongestPalindrome {
+public class E0409LongestPalindrome {
     public static int longestPalindrome(String s) {
 
         // char 범위: -128 ~ +127

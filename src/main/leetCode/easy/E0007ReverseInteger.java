@@ -1,6 +1,6 @@
 package main.leetCode.easy;
 
-public class _0007ReverseInteger {
+public class E0007ReverseInteger {
 
     public static void main(String[] args) {
 

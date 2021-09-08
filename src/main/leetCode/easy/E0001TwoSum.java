@@ -20,7 +20,7 @@ import java.util.Arrays;
 */
 
 
-public class _0001TwoSum {
+public class E0001TwoSum {
     public static void main(String[] args) {
 
         int[] output = new int[2];

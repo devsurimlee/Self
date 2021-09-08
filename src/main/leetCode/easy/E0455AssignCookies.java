@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class _0455AssignCookies {
+public class E0455AssignCookies {
 
     public static int findContentChildren(int[] g, int[] s) {
 

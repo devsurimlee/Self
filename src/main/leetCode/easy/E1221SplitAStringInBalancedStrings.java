@@ -1,7 +1,7 @@
 package main.leetCode.easy;
 
 // 21.08.31 - solved
-public class _1221SplitAStringInBalancedStrings {
+public class E1221SplitAStringInBalancedStrings {
     public static int balancedStringSplit(String s) {
 
         int sum = 0;

@@ -2,7 +2,7 @@ package main.leetCode.easy;
 
 import java.util.Arrays;
 
-public class _0561ArrayPartition1 {
+public class E0561ArrayPartition1 {
 
     public static int arrayPairSum(int[] nums) {
         int output = 0;
