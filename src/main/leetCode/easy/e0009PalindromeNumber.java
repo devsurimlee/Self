@@ -1,6 +1,6 @@
 package main.leetCode.easy;
 
-public class e0009PalindromeNumber {
+public class E0009PalindromeNumber {
     public static boolean isPalindrome(int x) {
         int y = x;
         int rev = 0;
