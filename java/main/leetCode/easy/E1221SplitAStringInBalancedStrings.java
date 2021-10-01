@@ -6,7 +6,6 @@ public class E1221SplitAStringInBalancedStrings {
 
         int sum = 0;
         int count = 0;
-
         // 문자열 읽으면서 R이면 +1, L이면 -1, R과 L의 개수가 같으면 +-하여 0임.
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == 'R') {
