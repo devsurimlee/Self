@@ -1,11 +1,10 @@
-a = map(int,input())
-x,y,z = map(int, list(input()))
+a = int(input())
+b = input()
 
-print(x)
-
-print(a*z)
-print(a*y)
-print(a*x)
+print(a*int(b[2]))
+print(a*int(b[1]))
+print(a*int(b[0]))
+print(a*int(b))
 
 
 
