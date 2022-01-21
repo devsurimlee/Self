@@ -1,40 +1,33 @@
+import sys
+input = sys.stdin.readline
 
+k, n = map(int, input().split())
+lines = []
+for _ in range(k):
+    lines.append(int(input()))
 
+# k = 4
+# n = 11
+# lines = [802, 743, 457, 539]
 
-# k, n = map(int, input().split())
-# line = []
-# for _ in range(k):
-#     line.append(int(input()))
-
-k = 4
-n = 11
-
-line = [802, 743, 457, 539]
-
-start = 0
-end = min(line) - 1
+start = 1
+end = max(lines)
 check = 0
 
-while check != n:
+while start <= end:
     each = (start + end) // 2
-    for i in range(k):
-        check += line[i] // each
+    check = 0
+    for line in lines:
+        check += line // each
+    if check < n:  # 자른 길이를 줄여야 됨
+        end = each - 1
+        # print(check, each)
+    elif check >= n:  # 자른 길이를 늘려야 됨
+        start = each + 1
+        # print(check, each)
+print(end)
 
-    if check == n:
-        print(check, each, '!')
-        break
-    else:
-        print(check, each)
-        if check < n: # 자른 길이를 줄여야 됨
-           end = each + 1
-        elif check > n: # 자른 길이를 늘려야 됨
-            start = each + 1
-        check = 0
-
-
-
-# 228, 10
-
+#######################
 
 # https://www.acmicpc.net/problem/1654 / 랜선 자르기
 
@@ -61,4 +54,3 @@ while check != n:
 # 200
 # 힌트
 # 802cm 랜선에서 4개, 743cm 랜선에서 3개, 457cm 랜선에서 2개, 539cm 랜선에서 2개를 잘라내 모두 11개를 만들 수 있다.
-
