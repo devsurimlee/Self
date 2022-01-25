@@ -8,9 +8,9 @@ ex = input()
 # ex = '00009+00009'
 # ex = '50+50-100+100-100-100'
 
-num1 = ex.split(minus)
+num = ex.split(minus)
 result = []
-for i in num1:
+for i in num:
     m = i.split(plus)
     cnt = 0
     for each in m:
@@ -22,6 +22,11 @@ for i in num1:
 first = result[0]
 end = sum(result[1::])
 print(first - end)
+
+
+
+
+##############################################
 
 # https://www.acmicpc.net/problem/1541
 
