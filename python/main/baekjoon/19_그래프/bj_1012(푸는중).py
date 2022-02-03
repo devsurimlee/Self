@@ -28,8 +28,6 @@ for _ in range(T):
 
 
 
-
-
 # https://www.acmicpc.net/problem/1012
 
 # 차세대 영농인 한나는 강원도 고랭지에서 유기농 배추를 재배하기로 하였다.

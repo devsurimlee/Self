@@ -2,7 +2,6 @@
 
 import numpy as np
 
-
 def stars(n, m):
     global lists
 
