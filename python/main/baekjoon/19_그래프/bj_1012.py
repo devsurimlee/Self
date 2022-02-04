@@ -1,32 +1,48 @@
-# T = int(input())
-T = 1
+import sys
 
-result = [0] * T
+input = sys.stdin.readline
+
+T = int(input())
+# T = 1
 star = '*'
-case = [[0, 0], [1, 0], [1, 1], [4, 2], [4, 3], [2, 4], [3, 4], [7, 4], [8, 4], [9, 4], [4, 5], [7, 5], [8, 5], [9, 5]]
+# case = [[0, 0], [1, 0], [1, 1], [4, 2], [4, 3], [2, 4], [3, 4], [7, 4], [8, 4], [9, 4], [4, 5], [7, 5], [8, 5], [9, 5]]
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
+
+
+def bfs(x, y):
+    queue = [[x, y]]
+
+    while queue:
+        a, b = queue[0][0], queue[0][1]
+        queue.pop(0)
+
+        for i in range(len(dx)):
+            w = a + dx[i]
+            s = b + dy[i]
+            if 0 <= w < N and 0 <= s < M and box[w][s] == 1:
+                box[w][s] = star
+                queue.append([w, s])
 
 for _ in range(T):
-    # M, N, K = map(int, input().split())
-    M, N, K = 10, 6, 14
-    arr = [[0] * (M + 1) for i in range(N)]
+    M, N, K = map(int, input().split())
+    # M, N, K = 10, 6, 14
+    box = [[0] * M for i in range(N)]
+    cnt = 0
 
-    for _ in range(K):
-        # x, y = map(int, input().split())
-        x, y = case[_][0], case[_][1]
-        arr[y][x] = 1
+    for i in range(K):
+        x, y = map(int, input().split())
+        # x, y = case[i][0], case[i][1]
+        box[y][x] = 1
 
-    for x in range(M):
-        for y in range(N):
-            if arr[y][x] == 1:
-                arr[y][x] = star
-            elif arr[y][x] == 0:
-                print()
+    for a in range(N):
+        for b in range(M):
+            if box[a][b] == 1:
+                bfs(a, b)
+                box[a][b] = star
+                cnt += 1
 
-
-
-
-
-
+    print(cnt)
 
 # https://www.acmicpc.net/problem/1012
 
