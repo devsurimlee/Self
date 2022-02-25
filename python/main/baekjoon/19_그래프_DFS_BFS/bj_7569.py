@@ -2,31 +2,42 @@ import sys
 from collections import deque
 
 sys.setrecursionlimit(10 ** 9)
-# input = sys.stdin.readline
+input = sys.stdin.readline
 
 # m, n, h = 5, 3, 1
 # m, n, h = 5, 3, 2
 # m, n, h = 4, 3, 2
-m, n, h = 5, 3, 2
-# m, n, h = map(int, input().split())
+m, n, h = map(int, input().split())
 
 graph = []
-surround = [[1, 0], [-1, -0], [0, 1], [0, -1]]
+point = [[0, 1, 0], [0, -1, -0], [0, 0, 1], [0, 0, -1], [-1, 0, 0], [1, 0, 0]]
 
 # case = [[[0, -1, 0, 0, 0], [-1, -1, 0, 1, 1], [0, 0, 0, 1, 1]]] # -1
 # case = [[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]], [[0, 0, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 0]]]  # 4
 # case = [[[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]], [[1, 1, 1, 1], [-1, -1, -1, -1], [1, 1, 1, -1]]] # 0
-case = [[[0, 0, 0, 0, 0], [0, 0, 0, 1, 0], [0, 0, 0, 0, 0]], [[0, 0, 1, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 0]]]  # 4
 
-for i in range(h):
-    li = []
-    for j in range(n):
-        li.append(case[i][j])
-        # li.append(list(map(int, input().split())))
-    graph.append(li)
+
+def bfs():
+    while queue:
+        a, b, c = queue.popleft()
+        for p in point:
+            x = a + p[0]
+            y = b + p[1]
+            z = c + p[2]
+            
+            ## 좌표가 특정 조건에 맞으면 토마토 익힘
+            if 0 <= x < h and 0 <= y < n and 0 <= z < m and graph[x][y][z] == 0:
+                graph[x][y][z] = graph[a][b][c] + 1
+                queue.append([x, y, z])
 
 
 queue = deque([])
+for i in range(h):
+    li = []
+    for j in range(n):
+        # li.append(case[i][j])
+        li.append(list(map(int, input().split())))
+    graph.append(li)
 
 for a in range(h):
     for b in range(n):
@@ -34,9 +45,24 @@ for a in range(h):
             if graph[a][b][c] == 1:
                 queue.append([a, b, c])
 
-print(queue)
+bfs()
 
-dfs()
+cnt = 0
+for a in range(h):
+    for b in range(n):
+        for c in range(m):
+            if graph[a][b][c] == 0:
+                print(-1)
+                exit(0)
+
+    arr_max = max(map(max, graph[a]))
+    cnt = max(cnt, arr_max)
+
+print(cnt - 1)
+
+# dfs를 써서 필요한 좌표만 체크하고 마지막에 0 개수 체크함.
+# 기존엔 2차원 배열을 이용해서 조건 체크하는게 까다로웠는데 3차원 배열로 바꾸자 조건 매기는게 편해짐.
+
 
 ##########################################
 
