@@ -19,16 +19,16 @@ def dijkstra():
     visit[start] = 0
 
     while queue:
-        disc, node = heapq.heappop(queue)
-        if visit[node] < disc:
+        dist, node = heapq.heappop(queue)
+        if visit[node] < dist:
             continue
 
-        for new_node, new_disc in graph[node]:
-            new_disc += disc
+        for new_dist, new_node in graph[node]:
+            new_dist += dist
 
-            if new_disc < visit[new_node]:
-                visit[new_node] = new_disc
-                heapq.heappush(queue, [new_disc, new_node])
+            if new_dist < visit[new_node]:
+                visit[new_node] = new_dist
+                heapq.heappush(queue, [new_dist, new_node])
 
 
 for _ in range(y):
